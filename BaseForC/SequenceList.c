@@ -10,11 +10,6 @@ typedef struct {
     int length;
 }SqList;
 
-int main(){
-
-    SqList SqList;
-    return 0;
-}
 // 初始化顺序表
 status initList_sq(SqList* list){
     list->elem = malloc(LIST_INIT_SIZE * sizeof(ElemType));
@@ -22,4 +17,10 @@ status initList_sq(SqList* list){
         exit(OVERFLOW);
     list->length = 0;
     return OK;
+}
+
+int main(){
+    SqList my_list;
+    int status = initList_sq(&my_list);
+    return 0;
 }
